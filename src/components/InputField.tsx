@@ -23,7 +23,7 @@ const sizeClasses = {
 };
 
 const variantClasses = {
-    filled: "bg-gray-200 dark:bg-gray-800 border border-transparent",
+    filled: "bg-red-800 dark:bg-gray-800 border border-transparent",
     outlined: "border border-gray-400 dark:border-gray-600",
     ghost: "bg-transparent border border-transparent",
 };
@@ -46,6 +46,7 @@ const InputField: React.FC<InputFieldProps> = ({
     const [showPassword, setShowPassword] = useState(false);
 
     const isPassword = type === "password";
+
     return (
         <div className="mb-4">
             {label && <label className="block mb-2 text-xl font-thin tracking-wider">{label}</label>}
@@ -59,6 +60,7 @@ const InputField: React.FC<InputFieldProps> = ({
                     className={`w-full rounded-sm outline-none border-none outline-[1px] outline-gray-950 dark:outline-gray-50 px-3 py-2 text-amber-500 dark:text-purple-800 tracking-wider focus:outline focus:outline-amber-500 dark:focus:outline-purple-500 ${invalid ? "outline-red-500 outline-4" : ""
                         } ${disabled ? "opacity-50 cursor-not-allowed" : ""} ${loading ? "cursor-not-allowed bg-amber-500" : ""} ${sizeClasses[size]} ${variantClasses[variant]}`}
                 />
+                {/* show password */}
                 {isPassword && (
                     <button
                         type="button"

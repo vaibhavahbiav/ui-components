@@ -58,7 +58,7 @@ function DataTable<T extends { id: number }>({
     }
   };
 
-  if (loading) return <p className="text-sm text-gray-600 dark:text-gray-300 mt-2 text-center tracking-wider">Loading...</p>;
+  if (loading) return <p className="text-sm text-gray-600 dark:text-gray-300 mt-2 text-center tracking-wider animate-pulse">Loading...</p>;
   if (!data.length) return <p className="text-sm text-gray-600 dark:text-gray-300 mt-2 text-center tracking-wider">No data available.</p>;
 
   return (

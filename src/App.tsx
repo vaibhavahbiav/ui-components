@@ -7,10 +7,10 @@ const App: React.FC = () => {
 
   type User = { id: number; name: string; email: string };
   const data: User[] = [
-    // { id: 1, name: "A", email: "a@example.com" },
-    // { id: 2, name: "B", email: "b@example.com" },
-    // { id: 3, name: "C", email: "c@example.com" },
-    // { id: 4, name: "v", email: "v@example.com" },
+    { id: 1, name: "A", email: "a@example.com" },
+    { id: 2, name: "B", email: "b@example.com" },
+    { id: 3, name: "C", email: "c@example.com" },
+    { id: 4, name: "v", email: "v@example.com" },
   ];
 
   const columns: Column<User>[] = [
@@ -33,8 +33,9 @@ const App: React.FC = () => {
           </button>
         </div>
 
-        <div className="flex flex-col items-center space-y-10 lg:space-y-0 lg:flex-row lg:pace-x-5 mt-40">
-          <div className="flex-1 px-2 lg:px-10 w-full">
+        <div className="flex flex-col items-center space-y-10 lg:justify-center lg:space-y-0 lg:flex-row lg:pace-x-5 mt-40">
+          {/* inputs */}
+          <div className="px-2 lg:px-10 w-full sm:max-w-[500px] lg:max-w-[800px]">
             <h2 className="text-2xl lg:text-4xl font-thin mb-10 text-center tracking-wider uppercase underline decoration-2 underline-offset-8 decoration-amber-500 dark:decoration-purple-500">input</h2>
             <InputField
               label="Username"
@@ -42,6 +43,7 @@ const App: React.FC = () => {
               helperText="Please enter your username here as it will be used for login."
               disabled={false}
               errorMessage="** Username is incorrect **"
+              // size="lg"
             // invalid
             />
             <InputField
@@ -50,12 +52,14 @@ const App: React.FC = () => {
               helperText="Please enter your account password here."
               errorMessage="**Password is required**"
               type="password"
+              // variant="filled"
+              // size="lg"
             // invalid
             />
           </div>
 
           {/* table */}
-          <div className="flex-1 px-2 lg:px-10 w-full">
+          <div className="px-2 lg:px-10 w-full sm:max-w-[500px] lg:max-w-[800px]">
             <h2 className="text-2xl lg:text-4xl font-thin mb-10 text-center tracking-wider uppercase underline decoration-2 underline-offset-8 decoration-amber-500 dark:decoration-purple-500">Table</h2>
             <DataTable<User> data={data} columns={columns} selectable />
           </div>
